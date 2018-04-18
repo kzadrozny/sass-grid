@@ -16,18 +16,8 @@ Based off of Jo Franchetti's [grid-cats.glitch.me](https://grid-cats.glitch.me) 
 * Install the required npm modules with `npm install`
 * Run task manager with `gulp`
 * Task manager auto runs port3000 when the gulp command is initiated.
+* Open localhost:3000
 * All changes are auto refreshed in your local host.
-
-## Accessibility Resources
-* [Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
-* [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
-* [WebAIM: Invisible Content Just for Screen Reader Users](https://webaim.org/techniques/css/invisiblecontent/)
-* [W3C Page Regions](https://www.w3.org/WAI/tutorials/page-structure/regions/)
-* [MDN web docs Using the button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_button_role)
-* [Making Data Tables Responsive](http://blog.apps.npr.org/2014/05/09/responsive-data-tables.html)
-* [Web Content Policies and Best Practices Handbook](https://loop.lib.uchicago.edu/documentation/communications/web-content-policies-and-best-practices-handbook/)
-
-Read [code-resources.md](https://github.com/uchicago-library/uchicago-library.github.io/blob/master/docs/code-resources.md) on the University of Chicago Library's github for more info and ADA compliant code samples.
 
 ## Contributing and Issues
 ### Contribute Code or Documentation
@@ -41,6 +31,17 @@ Read [code-resources.md](https://github.com/uchicago-library/uchicago-library.gi
 3. If helpful, provide code or a screenshot.
 
 Read [CONTRIBUTING.md](docs/CONTRIBUTING.md) for more info.
+
+## Accessibility Resources
+* [Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
+* [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
+* [WebAIM: Invisible Content Just for Screen Reader Users](https://webaim.org/techniques/css/invisiblecontent/)
+* [W3C Page Regions](https://www.w3.org/WAI/tutorials/page-structure/regions/)
+* [MDN web docs Using the button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_button_role)
+* [Making Data Tables Responsive](http://blog.apps.npr.org/2014/05/09/responsive-data-tables.html)
+* [Web Content Policies and Best Practices Handbook](https://loop.lib.uchicago.edu/documentation/communications/web-content-policies-and-best-practices-handbook/)
+
+Read [code-resources.md](https://github.com/uchicago-library/uchicago-library.github.io/blob/master/docs/code-resources.md) on the University of Chicago Library's github for more info and ADA compliant code samples.
 
 ## Author and Acknowledgments
 * Created by [Kathy Zadrozny](https://github.com/kzadrozny)
