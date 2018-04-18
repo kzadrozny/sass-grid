@@ -1,0 +1,323 @@
+// Based off of Jo Franchetti's https://grid-cats.glitch.me
+// Via her Medium article: https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-and-some-without-245a862f48df
+
+
+@import "media.scss";
+
+
+/*
+ * Variables
+ * --------------------------------------------------
+ */
+
+// Colors
+$main: #302d29;
+$accent: #a25715;
+$highlight: #337ab7;
+
+// Fonts
+$accent-font: 'EB Garamond', serif;
+$main-font: 'Lato', sans-serif;
+
+
+/*
+ * Global
+ * --------------------------------------------------
+ */
+
+body {
+  font-family: $main-font;
+  margin: 0 1.5em;
+}
+
+a {
+  color: $highlight;
+}
+
+section:not(.leading) { // Give max width to all section that are not the "leading" image
+  max-width: 960px;
+  margin: 0 auto 30px;
+}
+
+ul {
+  list-style: unset;
+  margin-left: 1em;
+  padding-left: 1em;
+  li {
+    padding-left: 1em;
+    text-indent: -1em;
+    margin-bottom: 0.5em;
+  }
+}
+
+
+/*
+ * Headers and Fonts
+ * --------------------------------------------------
+ */
+
+h1 {
+  font-size: 1.2em;
+  font-family: $accent-font;
+  color: #eee;
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+h2 {
+  font-size: 1.7em;
+  font-family: $accent-font;
+  font-weight: 700;
+  color: $main;
+  margin-top: 1.5em;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-family: $main-font;
+  font-weight: 100;
+  color: $accent;
+  margin-top: 1.5em;
+  figcaption & {  // Headers in figures
+    font-family: $accent-font;
+    font-weight: 700;
+    margin-top: 0.5em;
+    margin-bottom: 0.15em;
+  }
+}
+
+h4 {
+  font-size: 1.2em;
+  font-family: $main-font;
+  font-weight: 400;
+  font-style: italic;
+  color: darken($highlight,15%);
+  margin-top: 1.3em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+  line-height: 1.25em;
+}
+
+
+
+/*
+ * Navigation
+ * --------------------------------------------------
+ */
+
+header {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  img {
+    float: left;
+    max-height: 3em;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    @include respond-to(small) {
+      max-height: 2em;
+    }
+  }
+}
+
+nav {
+  padding: 1em 0.5em 0.5em 1em;
+  font-size: 1em;
+  color: white;
+  background-color: $main;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 0px 15px #000;
+  ul {
+    list-style: none;
+    display: inline-flex;
+    @include respond-to(smallonly) {
+      margin-left: 0;
+      padding-left: 0;
+    }
+    li {
+      padding-left: 2em;
+      @include respond-to(small) {
+        padding-left: 3.5em;
+      }
+    }
+  }
+  a {
+    color: #eee;
+    text-decoration: none;
+  }
+}
+
+/*
+ * Banner
+ * --------------------------------------------------
+ */
+
+.leading {
+  height: 75px;
+  margin: 40px -1.5em 30px -1.5em;
+  padding: 30px;
+  color: white;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('http://placekitten.com/1200/1200') center #333 no-repeat;
+  background-size: cover;
+  @include respond-to(small) {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    margin: 30px -1.5em;
+  }
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 10em;
+    padding-top: 2em;
+    @include respond-to(small) {
+      max-width: 20em;
+      padding-top: 3em;
+    }
+  }
+}
+
+
+/*
+ * General Image Styling
+ * --------------------------------------------------
+ */
+
+img {
+  &.hero { // wide "hero" image to use within text
+    width: 100%;
+    height: 15em; // change to make hero taller or shorter
+    object-fit: cover;
+  }
+  &.round {  // Makes round icon / thumbnail  image
+    border-radius: 50%;
+  }
+}
+
+
+/*
+ * Image Grids
+ * --------------------------------------------------
+ */
+
+.cards { // Used in featured grid
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+  max-width: 960px;
+  margin: 0 auto 30px;
+  @include respond-to(small) {
+    grid-template-columns: 1fr 1fr;
+  }
+  h2, h3 {  // Excludes h2 and h3 headers from being included in the grid
+    @include respond-to(small) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+}
+
+.icons-left {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  max-width: 960px;
+  margin: 0 auto 30px;
+  align-items: center;
+  @include respond-to(small) {
+    grid-template-columns: 1fr 3fr;
+  }
+  h2 { // Excludes h2 from being included in the grid
+    @include respond-to(small) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+  h3  {
+    margin-top: 0;
+  }
+  img {
+    max-height: 10em;
+    margin-left: auto;
+    margin-right: auto;
+    @include respond-to(small) {
+      max-width: 15em;
+      max-height: none;
+    }
+  }
+}
+
+.icons-right {
+  @extend .icons-left;
+  @include respond-to(small) {
+    grid-template-columns: 3fr 1fr;
+  }
+  img {
+    padding-top: 1em;
+    @include respond-to(smallonly) {
+      display: none;
+    }
+  }
+}
+
+
+/*
+ * Image Captions
+ * --------------------------------------------------
+ */
+
+figure {
+  position: relative; // Allows linked image to work without using z-index
+  img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+  }
+  figcaption { // Currently using h3 [in headers section]; change header type to accommodate header order
+    position: absolute;
+    top: 10px;
+    margin-right: 10px;
+    padding: 10px 20px 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    p {
+      font-size: 0.9em;
+    }
+  }
+  &.feature {
+    margin-top: -10px;
+    @include respond-to(small) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+}
+
+/*
+ * Footer
+ * --------------------------------------------------
+ */
+
+footer {
+  background-color: $main;
+  color: #fff;
+  font-size: 0.8em;
+  margin-left: -2em;
+  margin-right: -2em;
+  padding: 10px 30px;
+  a {
+    color: #eee;
+  }
+}
+
+
+
